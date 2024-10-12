@@ -1,3 +1,9 @@
+@font-face {
+    font-family: "Poppins-Regular";
+    src:
+      url("fonts/poppins-regular.woff2") format("woff2")
+  }
+
 * {
     padding: 0;
     margin: 0;
@@ -8,7 +14,95 @@ body {
     flex-direction: column;
 }
 
+#screenContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: end;
+    width: 248px;
+    background-color: #17181A;
+    height: 10em;
+    padding: 0 1.5em;
+    box-sizing: border-box;
+    border-radius: 25px 25px 0 0;
+    gap:0.2em;
+}
+
+#operation {
+    color:rgb(167, 167, 167);
+    font-size: 1em;
+    font-family: "Poppins-Regular";
+    font-weight: 600;
+}
+
+#result {
+    font-family: "Poppins-Regular";
+    font-weight: 600;
+    font-size: 2em;
+    color:white;
+}
+
+#operation::selection, #result::selection {
+    background-color: #FF9500;
+}
+
+#operation::selection {
+    color:white;
+}
+
 #buttonContainer {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, auto);
+    width: fit-content;
+    height: fit-content;
+    gap:0.5em;
+    background-color: #17181A;
+    padding: 1em;
+    border-radius: 0 0 25px 25px;
+    user-select: none;
+}
+
+.button {
+    color:white;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 25px;
+    border: none;
+    font-family: "Poppins-Regular", sans-serif;
+    font-weight: 800;
+    font-size: 1.1em;
+    line-height: 3;
+    text-align: center;
+    transition: all 0.05s ease-out;
+}
+
+.operationButton {
+    background-color: #FF9500;
+}
+
+.operationButton:active {
+    background-color: #ffbb5c;
+}
+
+.greyButton {
+    background-color: #D4D4D2;
+    color: #505050;
+}
+
+.greyButton:active {
+    background-color: rgb(161, 161, 161);
+}
+
+.digitButton {
+    background-color: #505050;
+}
+
+.digitButton:active {
+    background-color: #838383;
+}
+
+#zeroButton {
+    grid-column: span 2;
+    width: 6.5rem;
+    height: 3rem;
 }
